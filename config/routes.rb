@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/login', :to => 'sessions#new', :as => :login
-  get '/auth/spotify/callback', :to => 'sessions#create'
+  root 'users#index'
+
+  get '/auth/spotify/callback', :to => 'users#spotify'
+
+  get '/profile', to: 'users#show', as: 'user'
+  get '/music', to: 'users#music', as: 'music'
+
   get '/auth/failure', :to => 'sessions#failure'
-  get '/logout', :to => 'sessions#destroy'
+  get '/logout', :to => 'sessions#destroy', :as => "logout"
+
 end

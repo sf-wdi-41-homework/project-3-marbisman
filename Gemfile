@@ -21,7 +21,10 @@ gem 'uglifier', '>= 1.3.0'
 
 gem 'omniauth'
 
-gem 'omniauth-spotify'
+gem 'rspotify'
+
+gem 'font-awesome-rails'
+
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
