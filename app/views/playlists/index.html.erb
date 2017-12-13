@@ -1,0 +1,27 @@
+<h1>Collection Builder</h1>
+<p>Search Spotify for tracks to add to your new playlists!</p>
+
+<%= form_with url: search_path, html: { class: "form" } do |f| %>
+    <div class="form-group col-xs-4">
+      <%= f.text_field 'query', placeholder: "Enter artist name", class: "form-control" %>
+    </div>
+    <div class="form-group col-xs-4">
+      Artist<%= f.check_box :choice, { multiple: true, class: 'form-control' }, 'artist', false %>
+      Track<%= f.check_box :choice, { multiple: true, class: 'form-control' }, 'track', false %>
+      Album<%= f.check_box :choice, { multiple: true, class: 'form-control' }, 'album', false %>
+    </div>
+
+    <%= f.submit "Search", class: "btn btn-primary" %>
+<% end %>
+
+<div id="results">
+  <% if @results %>
+      <%= @results %>
+      <ul>
+        <% @results.each do |result| %>
+            <li><%= result.name %></li>
+        <% end %>
+      </ul>
+  <% end %>
+
+</div>

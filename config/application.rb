@@ -13,5 +13,8 @@ module MASHAPP
     RSpotify::authenticate("f30dab27d9a441a2b0b6e230916d3502", "67c38943a807432ba06d1aff8af68eeb")
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    # Logging
+    config.logger = Logger.new(STDOUT)
   end
 end
